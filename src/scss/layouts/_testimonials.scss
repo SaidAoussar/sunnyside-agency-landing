@@ -1,0 +1,56 @@
+@use "./../utilities/variables" as v;
+@use "./../utilities/mixins" as m;
+
+.testimonials {
+  padding: 20px 32px;
+
+  @include m.breakpoint-up(md) {
+    padding: 129px 170px;
+  }
+  &__title {
+    text-align: center;
+    color: v.$grayish-blue;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 32px 0 24px 0;
+  }
+
+  &__items {
+    @include m.breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  .testimonial {
+    text-align: center;
+    padding: 32px 0px;
+    &__img {
+      height: 70px;
+      width: 70px;
+      margin-bottom: 32px;
+      border-radius: 50%;
+    }
+
+    &__description {
+      font-weight: 900;
+      line-height: 1.5;
+      color: v.$very-dark-grayish-blue;
+      margin-bottom: 36px;
+    }
+
+    &__author {
+      font-size: v.$fs-default;
+      font-weight: 900;
+      color: v.$very-dark-desaturated-blue;
+      margin-bottom: 12px;
+    }
+
+    &__author-job {
+      color: v.$grayish-blue;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
+.header {
+  content: "";
+  position: relative;
+  height: 538px;
+  background-image: url("../images/mobile/image-header.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  @include m.breakpoint-up(lg) {
+    height: 784px;
+    background-image: url("../images/desktop/image-header.jpg");
+  }
+
+  &__nav-mobile {
+    z-index: 1;
+    position: absolute;
+    background-color: v.$white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 44px);
+    padding: 40px 0 65px;
+
+    @include m.breakpoint-up(lg) {
+      display: none;
+    }
+
+    > li {
+      &:not(:last-child) {
+        margin-bottom: 42px;
+      }
+    }
+
+    a {
+      font-size: 20px;
+      text-transform: capitalize;
+      font-weight: 600;
+      color: v.$dark-grayish-blue;
+    }
+
+    .cta {
+      color: black;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: v.$white;
+      height: 32px;
+      width: 32px;
+      top: -30px;
+      right: 0;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+  }
+
+  h1 {
+    position: absolute;
+    @include m.horizontal-center;
+    bottom: 56%;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: v.$white;
+    letter-spacing: 4px;
+
+    @include m.breakpoint-up(lg) {
+      width: 100%;
+      font-size: 46px;
+      letter-spacing: 8px;
+      bottom: 68%;
+    }
+  }
+
+  & > img {
+    position: absolute;
+    @include m.horizontal-center;
+    bottom: 25%;
+
+    @include m.breakpoint-up(lg) {
+      bottom: 41%;
+    }
+  }
+}

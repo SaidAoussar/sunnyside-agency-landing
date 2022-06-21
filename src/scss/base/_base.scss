@@ -1,0 +1,67 @@
+@use "./../utilities/variables" as v;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-family: "Fraunces", serif;
+}
+
+p {
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.d-none {
+  display: none;
+}
+.d-inline-block {
+  display: inline-block;
+}
+
+.grid-order-1 {
+  order: 1;
+}
+
+.grid-order-2 {
+  order: 2;
+}
+
+.btn-yellow {
+  background-color: v.$yellow;
+}
+
+.btn-white {
+  background-color: v.$white;
+}
+
+.btn {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  padding: 18px 32px;
+  border-radius: 40px;
+}

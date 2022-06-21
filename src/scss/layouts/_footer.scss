@@ -1,0 +1,58 @@
+@use "./../utilities/variables" as v;
+@use "./../utilities/mixins" as m;
+
+.footer {
+  text-align: center;
+  padding: 58px 24px 72px;
+  background-color: #90d4c5;
+
+  &__logo {
+    height: 30px;
+    margin-bottom: 36px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 68px;
+
+    @include m.breakpoint-up(md) {
+      display: block;
+    }
+
+    > li {
+      text-transform: capitalize;
+
+      @include m.breakpoint-up(md) {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 60px;
+        }
+      }
+
+      a {
+        color: v.$dark-moderate-cyan;
+        &:hover {
+          color: v.$white;
+        }
+      }
+    }
+  }
+
+  &__social {
+    svg {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover path {
+        fill: v.$white;
+      }
+    }
+  }
+}

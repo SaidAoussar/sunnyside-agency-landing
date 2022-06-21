@@ -1,0 +1,34 @@
+@use "./../utilities/mixins" as m;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include m.breakpoint-up(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  // > div {
+  //   height: 376px;
+  //   width: 376px;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  // }
+
+  // &__orange {
+  //   background-image: url("./../images/mobile/image-gallery-orange.jpg");
+  // }
+
+  // &__cone {
+  //   background-image: url("./../images/mobile/image-gallery-cone.jpg");
+  // }
+  // &__sugar-cubes {
+  //   background-image: url("./../images/mobile/image-gallery-sugar-cubes.jpg");
+  // }
+}

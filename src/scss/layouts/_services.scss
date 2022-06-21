@@ -1,0 +1,116 @@
+@use "./../utilities/variables" as v;
+@use "./../utilities/mixins" as m;
+
+.services {
+  @include m.breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__img {
+    height: 312px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include m.breakpoint-up(lg) {
+      height: 100%;
+    }
+  }
+
+  &__img {
+    &--transform {
+      background-image: url("./../images/mobile/image-transform.jpg");
+      @include m.breakpoint-up(lg) {
+        background-image: url("./../images/desktop/image-transform.jpg");
+      }
+    }
+
+    &--stand-out {
+      background-image: url("./../images/mobile/image-stand-out.jpg");
+      @include m.breakpoint-up(lg) {
+        background-image: url("./../images/desktop/image-stand-out.jpg");
+      }
+    }
+  }
+
+  &__text {
+    padding: 56px 24px;
+    text-align: center;
+
+    @include m.breakpoint-up(lg) {
+      padding: 164px 114px 154px 162px;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    margin-bottom: 30px;
+
+    @include m.breakpoint-up(lg) {
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    font-size: v.$fs-default;
+    line-height: 1.5;
+    color: v.$dark-grayish-blue;
+    margin-bottom: 30px;
+
+    @include m.breakpoint-up(lg) {
+      font-size: 19px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .link-container {
+    display: inline-block;
+    position: relative;
+    width: 136px;
+    height: 22px;
+
+    @include m.breakpoint-up(lg) {
+      width: 150px;
+    }
+
+    .underline {
+      position: absolute;
+      z-index: -1;
+      height: 12px;
+      left: -6px;
+      right: -6px;
+      bottom: -2px;
+      border-radius: 6px;
+
+      &--yellow {
+        background-color: v.$yellow;
+        opacity: 0.4;
+      }
+
+      &--soft-red {
+        background-color: v.$soft-red;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: "Fraunces", serif;
+    font-size: v.$fs-default;
+    color: v.$very-dark-desaturated-blue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+
+    @include m.breakpoint-up(lg) {
+      font-size: 20px;
+    }
+  }
+}

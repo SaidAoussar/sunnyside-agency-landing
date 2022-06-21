@@ -1,0 +1,50 @@
+@use "./../utilities/mixins" as m;
+@use "./../utilities/variables" as v;
+
+nav {
+  position: absolute;
+  right: 25px;
+  left: 25px;
+  top: 25px;
+  display: flex;
+  justify-content: space-between;
+
+  @include m.breakpoint-up(lg) {
+    top: 44px;
+    right: 40px;
+    left: 40px;
+  }
+
+  .links {
+    display: none;
+    @include m.breakpoint-up(lg) {
+      display: flex;
+      column-gap: 50px;
+    }
+
+    a {
+      font-family: "Barlow", sans-serif;
+      text-transform: capitalize;
+      color: v.$white;
+      cursor: pointer;
+    }
+
+    .cta {
+      color: black;
+    }
+
+    .cta {
+      &:hover {
+        background-color: rgba(v.$white, $alpha: 0.3);
+        color: v.$white;
+      }
+    }
+  }
+
+  .icon-hamburger {
+    cursor: pointer;
+    @include m.breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}
