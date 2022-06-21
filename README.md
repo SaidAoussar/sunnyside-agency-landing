@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [code](https://github.com/SaidAoussar/sunnyside-agency-landing)
-- Live Site URL: [demo](https://your-live-site-url.com)
+- Live Site URL: [demo](https://sunnyside-agency-landing-saidaoussar.netlify.app/)
 
 ## My process
 
